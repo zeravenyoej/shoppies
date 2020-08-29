@@ -9,5 +9,13 @@
     text-align: center;
     padding: 2%;
     font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    margin: 5% 10%;
+
   }
   
+  #resultsAndNoms {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }

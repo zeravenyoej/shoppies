@@ -1,1 +1,1 @@
-# shoppies
+# The Shoppies - Movie Awards for Entrepreneurs
