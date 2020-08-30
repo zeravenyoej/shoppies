@@ -1,16 +1,14 @@
 import React from 'react';
 import './Sass/App.scss';
 import Search from './components/Search';
-import Results from './components/Results';
 import Nominations from './components/Nominations';
 
 function App() {
   return (
     <div className="App">
-        The Shoppies
-        <Search/>
+        <h1>The Shoppies</h1>
         <div id="resultsAndNoms">
-            <Results/>
+            <Search/>
             <Nominations/>
         </div>
     </div>

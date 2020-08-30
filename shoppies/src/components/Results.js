@@ -2,7 +2,7 @@ import React from 'react';
 
 const Results = () => {
     return (
-        <div>
+        <div id="resultsDiv">
             <h2>Results for "ram"</h2>
             <ul>
                 <li>Rambo (1999) 
