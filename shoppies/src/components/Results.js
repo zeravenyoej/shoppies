@@ -1,7 +1,10 @@
 import React from 'react';
 import cuid from "cuid";
+import { connect } from 'react-redux';
+import { nominateMovie } from '../actions/index';
 
 const Results = (props) => {
+
     return (
         <div id="resultsDiv">
             <h2>Results for {props.query ? `"${props.query}"` : "..."}</h2>
@@ -11,7 +14,11 @@ const Results = (props) => {
                         <li key={cuid()}>
                             <h4>{movie.Title}</h4>
                             <h4>({movie.Year})</h4>
-                            <button onClick={()=>{}}>Nominate</button>
+                            <button onClick={(e) => {
+                                e.preventDefault();
+                                props.nominateMovie(movie)}}>
+                                Nominate
+                            </button>
                         </li>
                 )})}
             </ul>
@@ -19,4 +26,9 @@ const Results = (props) => {
     );
 };
 
-export default Results;
+
+const mapStateToProps = state => {
+    return {};
+};
+  
+export default connect(mapStateToProps, { nominateMovie })(Results);

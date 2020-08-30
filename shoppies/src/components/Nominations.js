@@ -1,16 +1,34 @@
 import React from 'react';
-// import NominationCard from './NominationCard';
+import { connect } from 'react-redux';
+import { removeMovie } from '../actions/index';
+import cuid from "cuid";
 
-const Nominations = () => {
+const Nominations = (props) => {
     return (
         <div>
             <h2>Nominations</h2>
             <ul>
-                <li> Rambo (1999) <button>Remove</button></li>
+                {props.nominatedMovies && props.nominatedMovies.map(movie => {
+                    return (
+                        <li key={cuid()}>
+                            <h4>{movie.Title}</h4>
+                            <h4>({movie.Year})</h4>
+                            <button onClick={(e) => {
+                                e.preventDefault()
+                                props.removeMovie(movie)}}>
+                                Remove
+                            </button>
+                        </li>
+                )})}
             </ul>
-            
         </div>
     );
 };
 
-export default Nominations;
+const mapStateToProps = state => {
+    return {
+      nominatedMovies: state.nominatedMovies
+    };
+};
+
+export default connect(mapStateToProps, { removeMovie })(Nominations);
