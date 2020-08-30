@@ -4,26 +4,37 @@ import axios from 'axios';
 
 
 const Search = () => {
-    const [data, setData] = useState();
+    const [query, setQuery] = useState('');
 
     useEffect(() => {
-        axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=8869509b')
+        axios.get(`http://www.omdbapi.com/?t=${query}&apikey=36575925`)
         .then(res => console.log(res))
         .catch(err => console.log("Here is the error: ", err))
-    },[data])
+    },[query])
 
+    const handleChange = (e) => {
+        setQuery(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        setQuery('');
+    };
 
     return (
         <div>
-            <h3>Movie title</h3>
-            <form>
+            <h3>Choose a movie to nominate</h3>
+            <form onSubmit={handleSubmit}>
                 <input
-                placeholder="search movie title"
-                id="movie"
-                type="text"
-                />
+                    placeholder="search movie title"
+                    id="movie"
+                    type="text"
+                    // should it be query.name?
+                    value={query}
+                    onChange={handleChange}
+                    />
             </form>
-
             <Results/>
         </div>
     );
