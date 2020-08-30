@@ -1,5 +1,5 @@
 import React from 'react';
-import NominationCard from './NominationCard';
+// import NominationCard from './NominationCard';
 
 const Nominations = () => {
     return (

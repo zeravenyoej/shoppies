@@ -1,17 +1,19 @@
 import React from 'react';
+import cuid from "cuid";
 
-const Results = () => {
+const Results = (props) => {
     return (
         <div id="resultsDiv">
-            <h2>Results for "ram"</h2>
+            <h2>Results for {props.query ? `"${props.query}"` : "..."}</h2>
             <ul>
-                <li>Rambo (1999) 
-                    <button 
-                        onClick={()=>{
-
-                        }}>
-                    Nominate</button>
-                </li>
+                {props.movieData && props.movieData.map(movie => {
+                    return (
+                        <li key={cuid()}>
+                            <h4>{movie.Title}</h4>
+                            <h4>({movie.Year})</h4>
+                            <button onClick={()=>{}}>Nominate</button>
+                        </li>
+                )})}
             </ul>
         </div>
     );
