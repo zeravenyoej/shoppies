@@ -4,6 +4,11 @@ import { removeMovie } from '../actions/index';
 import cuid from "cuid";
 
 const Nominations = (props) => {
+
+    if (props.nominatedMovies.length >= 5) {
+        alert("you've hit 5!")
+    }
+
     return (
         <div id="nominationsDiv">
             <h2>Nominations</h2>

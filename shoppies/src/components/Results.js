@@ -4,6 +4,17 @@ import { connect } from 'react-redux';
 import { nominateMovie } from '../actions/index';
 
 const Results = (props) => {
+    // function checkForFiveFilms(state, action) {
+    // if ([...state.nominatedMovies, action.payload].length >= 6) {
+    //     return {
+    //         nominatedMovies: [...state.nominatedMovies, action.payload]
+    //     }
+    // } else {
+    //     return {
+    //         nominatedMovies: [...state.nominatedMovies]
+    //     }
+    // }
+    // };
 
     return (
         <div id="resultsDiv">
@@ -20,7 +31,9 @@ const Results = (props) => {
                                     ) : (
                                     <button className="liveButton" onClick={(e) => {
                                         e.preventDefault();
-                                        props.nominateMovie(movie)}}>
+                                        if (props.nominatedMovies.length < 5) {
+                                            props.nominateMovie(movie)
+                                        }}}>
                                         Nominate
                                     </button>
                                 )}
