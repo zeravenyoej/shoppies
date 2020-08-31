@@ -18,12 +18,14 @@ function App() {
 
     return (
         <div className="App">
-            <h1>The Shoppies</h1>
-            <h3>Choose a movie to nominate</h3>
-            <Search
-                setQuery={setQuery}
-                setMovieData={setMovieData}
-            />
+            <div id="topContent">
+                <h1>The Shoppies</h1>
+                <h3>Choose a movie to nominate</h3>
+                <Search
+                    setQuery={setQuery}
+                    setMovieData={setMovieData}
+                />
+            </div>
             <div id="resultsAndNoms">
                 <Results
                     movieData={movieData}

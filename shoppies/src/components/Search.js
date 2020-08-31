@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 const Search = (props) => {
     const form = document.getElementById("form");
@@ -15,14 +18,13 @@ const Search = (props) => {
     };
 
     return (
-        <div>
-            <form id="form" onSubmit={handleSubmit}>
-                <input
-                    placeholder="search by title"
-                    id="movie"
-                    onChange={handleChange}/>
-            </form>
-        </div>
+        <form id="form" onSubmit={handleSubmit}>
+            <FontAwesomeIcon class="magnifyIcon" icon={faSearch}/>
+            <input
+                placeholder="search by title"
+                id="movie"
+                onChange={handleChange}/>
+        </form>
     );
 };
 

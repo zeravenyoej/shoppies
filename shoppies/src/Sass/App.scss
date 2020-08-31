@@ -9,11 +9,56 @@
     text-align: center;
     padding: 2%;
     font-family: 'Open Sans', sans-serif;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin: 5% 10%;
-    background-color: blanchedalmond;
-    
+    // background-color: blanchedalmond;
 }
+
+#topContent {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(250, 236, 174);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 3%;
+
+    h1 {
+        font-size: 3rem;
+        margin: 1%;
+    }
+    
+    h3 {
+        margin: 1%;
+    }
+    
+    
+    form {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        width: 40%;
+        
+        .magnifyIcon {
+            margin-left: 1.5%;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            transform: scaleX(-1);
+            opacity: 0.5;
+            color: gray;
+        }
+
+        input {
+            padding: 1%;
+            padding-left: 7%;
+            width: 100%;
+            font-size: 1rem;
+        }
+    }
+}
+
 
 #resultsAndNoms {
     display: flex;
@@ -26,6 +71,10 @@
 
 #resultsDiv, #nominationsDiv {
     width: 40%;
+    padding: 3%;
+    background-color: rgb(250, 236, 174);
+    border-radius: 5px;
+    border: 1px solid black;
 
     h2 {
         text-align: center;
