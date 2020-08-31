@@ -10,7 +10,7 @@ function App() {
     const [movieData, setMovieData] = useState();
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?s=${query}&apikey=36575925`)
+        axios.get(`https://www.omdbapi.com/?s=${query}&apikey=36575925`)
         .then(res => setMovieData(res.data.Search))
         .catch(err => console.log("Here is the error: ", err))
     },[query]);
