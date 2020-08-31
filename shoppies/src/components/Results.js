@@ -15,11 +15,15 @@ const Results = (props) => {
                             <img src={movie.Poster} atl="poster"/>
                                 <h4>{movie.Title}</h4>
                             <div className="movieInfo">
-                                <button onClick={(e) => {
-                                    e.preventDefault();
-                                    props.nominateMovie(movie)}}>
-                                    Nominate
-                                </button>
+                                {props.nominatedMovies.includes(movie) ? (
+                                    <button className="disabledButton"> Nominate </button>
+                                    ) : (
+                                    <button className="liveButton" onClick={(e) => {
+                                        e.preventDefault();
+                                        props.nominateMovie(movie)}}>
+                                        Nominate
+                                    </button>
+                                )}
                                 <h4>({movie.Year})</h4>
                             </div>
                         </li>
@@ -31,7 +35,9 @@ const Results = (props) => {
 
 
 const mapStateToProps = state => {
-    return {};
+    return {
+        nominatedMovies: state.nominatedMovies
+    };
 };
   
 export default connect(mapStateToProps, { nominateMovie })(Results);

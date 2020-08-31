@@ -14,7 +14,7 @@ const Nominations = (props) => {
                             <img src={movie.Poster} atl="poster"/>
                             <h4>{movie.Title}</h4>
                             <div className="movieInfo"> 
-                                <button onClick={(e) => {
+                                <button className="liveButton" onClick={(e) => {
                                     e.preventDefault()
                                     props.removeMovie(movie)}}>
                                     Remove
