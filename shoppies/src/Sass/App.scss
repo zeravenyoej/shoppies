@@ -3,14 +3,15 @@
     margin: 0;
     box-sizing: border-box;
     max-width: 100%;
-  }
-  
-  .App {
+}
+
+.App {
     text-align: center;
     padding: 2%;
     font-family: 'Open Sans', sans-serif;
     border: 1px solid black;
     margin: 5% 10%;
+    background-color: blanchedalmond;
     
 }
 
@@ -18,4 +19,43 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
+    margin: auto 5%;
+    margin-top: 5%;
+    text-align: start;
+}
+
+#resultsDiv, #nominationsDiv {
+    width: 40%;
+
+    h2 {
+        text-align: center;
+    }
+
+    li {
+        margin: 5% auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            height: 150px;
+            width: 100px;
+            margin: 3% auto;
+        }
+        
+        .movieInfo {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 40%;
+            margin: 3%;
+
+            button {
+                padding: 2%;
+                font-size: 1rem;
+                border-radius: 5px;
+            }
+        }
+    }
+}

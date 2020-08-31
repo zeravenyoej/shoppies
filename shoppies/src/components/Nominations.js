@@ -5,19 +5,22 @@ import cuid from "cuid";
 
 const Nominations = (props) => {
     return (
-        <div>
+        <div id="nominationsDiv">
             <h2>Nominations</h2>
             <ul>
                 {props.nominatedMovies && props.nominatedMovies.map(movie => {
                     return (
                         <li key={cuid()}>
+                            <img src={movie.Poster} atl="poster"/>
                             <h4>{movie.Title}</h4>
-                            <h4>({movie.Year})</h4>
-                            <button onClick={(e) => {
-                                e.preventDefault()
-                                props.removeMovie(movie)}}>
-                                Remove
-                            </button>
+                            <div className="movieInfo"> 
+                                <button onClick={(e) => {
+                                    e.preventDefault()
+                                    props.removeMovie(movie)}}>
+                                    Remove
+                                </button>
+                                <h4>({movie.Year})</h4>
+                            </div>
                         </li>
                 )})}
             </ul>

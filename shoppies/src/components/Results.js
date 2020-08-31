@@ -12,13 +12,16 @@ const Results = (props) => {
                 {props.movieData && props.movieData.map(movie => {
                     return (
                         <li key={cuid()}>
-                            <h4>{movie.Title}</h4>
-                            <h4>({movie.Year})</h4>
-                            <button onClick={(e) => {
-                                e.preventDefault();
-                                props.nominateMovie(movie)}}>
-                                Nominate
-                            </button>
+                            <img src={movie.Poster} atl="poster"/>
+                                <h4>{movie.Title}</h4>
+                            <div className="movieInfo">
+                                <button onClick={(e) => {
+                                    e.preventDefault();
+                                    props.nominateMovie(movie)}}>
+                                    Nominate
+                                </button>
+                                <h4>({movie.Year})</h4>
+                            </div>
                         </li>
                 )})}
             </ul>

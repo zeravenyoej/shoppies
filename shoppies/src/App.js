@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Sass/App.scss';
 import Search from './components/Search';
 import Nominations from './components/Nominations';
+import axios from 'axios';
+import Results from './components/Results';
 
 function App() {
-  return (
-    <div className="App">
-        <h1>The Shoppies</h1>
-        <div id="resultsAndNoms">
-            <Search/>
-            <Nominations/>
+    const [query, setQuery] = useState('');
+    const [movieData, setMovieData] = useState();
+
+    useEffect(() => {
+        axios.get(`http://www.omdbapi.com/?s=${query}&apikey=36575925`)
+        .then(res => setMovieData(res.data.Search))
+        .catch(err => console.log("Here is the error: ", err))
+    },[query]);
+    
+
+    return (
+        <div className="App">
+            <h1>The Shoppies</h1>
+            <h3>Choose a movie to nominate</h3>
+            <Search
+                setQuery={setQuery}
+                setMovieData={setMovieData}
+            />
+            <div id="resultsAndNoms">
+                <Results
+                    movieData={movieData}
+                    query={query}/>
+                <Nominations/>
+            </div>
         </div>
-    </div>
-  );
-}
+    );
+};
 
 export default App;
