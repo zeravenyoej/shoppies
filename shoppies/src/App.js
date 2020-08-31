@@ -20,7 +20,7 @@ function App() {
         <div className="App">
             <div id="topContent">
                 <h1>The Shoppies</h1>
-                <h3>Choose a movie to nominate</h3>
+                <h3>Choose up to five movies to nominate</h3>
                 <Search
                     setQuery={setQuery}
                     setMovieData={setMovieData}

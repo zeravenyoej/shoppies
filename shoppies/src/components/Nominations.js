@@ -1,17 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeMovie } from '../actions/index';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrophy } from '@fortawesome/free-solid-svg-icons';
 import cuid from "cuid";
 
 const Nominations = (props) => {
 
-    if (props.nominatedMovies.length >= 5) {
-        alert("you've hit 5!")
-    }
-
     return (
         <div id="nominationsDiv">
             <h2>Nominations</h2>
+            {props.nominatedMovies.length >= 5 ? (
+                <div id="banner">
+                    <FontAwesomeIcon class="trophy" icon={faTrophy}/>
+                    <p>Congratulations!<br/> The nominations are in!</p>
+                </div>
+            ): (
+                null
+            )}
+
             <ul>
                 {props.nominatedMovies && props.nominatedMovies.map(movie => {
                     return (
