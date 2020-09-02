@@ -2,8 +2,14 @@ import React from 'react';
 import cuid from "cuid";
 import { connect } from 'react-redux';
 import { nominateMovie } from '../actions/index';
+import applause from '../sounds/applause.wav';
+import { Howl } from 'howler';
 
 const Results = (props) => {
+    function playSound (src) {
+        const sound = new Howl({src: [applause]})
+        sound.play()
+    }
     return (
         <div id="resultsDiv">
             <h2>Results for {props.query ? `"${props.query}"` : "..."}</h2>
@@ -21,6 +27,7 @@ const Results = (props) => {
                                         e.preventDefault();
                                         if (props.nominatedMovies.length < 5) {
                                             props.nominateMovie(movie)
+                                            playSound()
                                         }}}>
                                         Nominate
                                     </button>

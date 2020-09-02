@@ -4,8 +4,14 @@ import { removeMovie } from '../actions/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrophy } from '@fortawesome/free-solid-svg-icons';
 import cuid from "cuid";
+import crowd from '../sounds/crowd.wav';
+import { Howl } from 'howler';
 
 const Nominations = (props) => {
+    function playSound (src) {
+        const sound = new Howl({src: [crowd]})
+        sound.play()
+    }
 
     return (
         <div id="nominationsDiv">
@@ -13,6 +19,7 @@ const Nominations = (props) => {
             
             {props.nominatedMovies.length >= 5 ? (
                 <div id="banner">
+                    playSound()
                     <FontAwesomeIcon class="trophy" icon={faTrophy}/>
                     <p>Congratulations!<br/> The nominations are in!</p>
                 </div>
