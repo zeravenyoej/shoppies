@@ -10,6 +10,7 @@ const Nominations = (props) => {
     return (
         <div id="nominationsDiv">
             <h2>Nominations</h2>
+            
             {props.nominatedMovies.length >= 5 ? (
                 <div id="banner">
                     <FontAwesomeIcon class="trophy" icon={faTrophy}/>

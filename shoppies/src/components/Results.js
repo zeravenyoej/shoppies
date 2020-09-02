@@ -12,7 +12,7 @@ const Results = (props) => {
                     return (
                         <li key={cuid()}>
                             <img src={movie.Poster} atl="poster"/>
-                                <h4>{movie.Title}</h4>
+                            <h4>{movie.Title}</h4>
                             <div className="movieInfo">
                                 {props.nominatedMovies.includes(movie) ? (
                                     <button className="disabledButton"> Nominate </button>

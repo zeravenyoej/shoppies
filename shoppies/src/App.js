@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Sass/App.scss';
+import axios from 'axios';
 import Search from './components/Search';
 import Nominations from './components/Nominations';
-import axios from 'axios';
 import Results from './components/Results';
 
 function App() {
