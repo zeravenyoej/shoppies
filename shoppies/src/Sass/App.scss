@@ -155,43 +155,30 @@ html {
                 flex-wrap: wrap;
             }
 
-            .liveButton {
-                padding: 5%;
-                font-size: 1rem;
-                border-radius: 5px;
-                box-shadow: 2px 3px 3px 0;
-                margin-top: 0;
-                margin-bottom: 3px;
+            button {
+                width: 60%;
+                padding: 5% 7%;
                 transition: all 0.2s;
                 outline: none;
+                font-size: 1rem;
+                border-radius: 5px;
 
                 @media (min-width: 0px) and (max-width: 415px) {
                     padding: 5%;
                 }
+            }
+
+            .liveButton {
+                margin-top: 0;
+                margin-bottom: 3px;
+                box-shadow: 2px 3px 3px 0;
             }
 
             .disabledButton {
-                padding: 5%;
                 margin-top: 3px;
                 margin-bottom: 0;
+                box-shadow: 1px 1.5px 1.5px 0;
                 opacity: 0.3;
-                box-shadow: 1px 1.5px 1.5px 0;
-
-                @media (min-width: 0px) and (max-width: 415px) {
-                    padding: 5%;
-                }
-            }
-
-            .liveButton:active {
-                padding: 4%;
-                box-shadow: 1px 1.5px 1.5px 0;
-                margin-top: 3px;
-                margin-bottom: 0;
-                transition: all 0.2s;
-
-                @media (min-width: 0px) and (max-width: 415px) {
-                    padding: 5%;
-                }
             }
         }
     }
