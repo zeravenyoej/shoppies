@@ -191,9 +191,10 @@ html {
     padding: 2%;
     justify-content: space-around;
     background-color: black;
-    margin-top: 2%;
     border-radius: 3px;
     box-shadow: #333333 2px 3px 3px 0;
+    height: 100%;
+    width: 100%;
 
     @media (min-width: 416px) and (max-width: 1024px) {
        padding: 5%;
