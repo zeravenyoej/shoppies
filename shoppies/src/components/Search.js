@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-
 const Search = (props) => {
     const form = document.getElementById("form");
    
@@ -13,8 +12,8 @@ const Search = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.setMovieData();
-        form.reset();
-        props.setQuery('')
+        form.reset();               // clears the text in the input field
+        props.setQuery('')          // clears the h2 tag in the results div
     };
 
     return (

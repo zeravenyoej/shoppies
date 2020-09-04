@@ -1,0 +1,38 @@
+#banner {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    justify-content: space-around;
+    background-color: black;
+    border-radius: 3px;
+    box-shadow: #333333 2px 3px 3px 0;
+    height: 100%;
+    width: 100%;
+
+    @media (min-width: 416px) and (max-width: 1024px) {
+       padding: 5%;
+    }
+    
+    p {
+        font-size: 1.3rem;
+        color: white;
+        text-align: center;
+
+        @media (min-width: 416px) and (max-width: 1024px) {
+            font-size: 1.9rem;
+        }
+    }
+
+    .trophy {
+        width: 45px;
+        height: 45px;
+        color: gold;
+        margin-right: 2%;
+
+        @media (min-width: 416px) and (max-width: 1024px) {
+            width: 65px;
+            height: 65px;
+        }
+    }
+
+}

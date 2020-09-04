@@ -6,10 +6,8 @@ import applause from '../sounds/applause.wav';
 import { Howl } from 'howler';
 
 const Results = (props) => {
-    function playSound (src) {
-        const sound = new Howl({src: [applause]})
-        sound.play()
-    }
+    const sound = new Howl({src: [applause]})
+
     return (
         <div id="resultsDiv">
             <h2>Results for {props.query ? `"${props.query}"` : "..."}</h2>
@@ -20,6 +18,7 @@ const Results = (props) => {
                             <img src={movie.Poster} atl="poster"/>
                             <h4>{movie.Title}</h4>
                             <div className="movieInfo">
+                                {/* ternary checks if movie has already been nominated and renders the appropriate button accordingly */}
                                 {props.nominatedMovies.includes(movie) ? (
                                     <button className="disabledButton"> Nominate </button>
                                     ) : (
@@ -27,7 +26,7 @@ const Results = (props) => {
                                         e.preventDefault();
                                         if (props.nominatedMovies.length < 5) {
                                             props.nominateMovie(movie)
-                                            playSound()
+                                            sound.play()
                                         }}}>
                                         Nominate
                                     </button>
@@ -40,7 +39,6 @@ const Results = (props) => {
         </div>
     );
 };
-
 
 const mapStateToProps = state => {
     return {

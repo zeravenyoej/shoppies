@@ -46,21 +46,22 @@ const Nominations = (props) => {
             </Modal>
 
             <ul>
-                {props.nominatedMovies && props.nominatedMovies.map(movie => {
+                {props.nominatedMovies.map(movie => {
                     return (
-                        <li key={cuid()}>
+                        <li key={cuid()}>         
                             <img src={movie.Poster} atl="poster"/>
                             <h4>{movie.Title}</h4>
                             <div className="movieInfo"> 
                                 <button className="liveButton" onClick={(e) => {
                                     e.preventDefault()
-                                    props.removeMovie(movie)}}>
+                                    removeMovie(movie)}}>
                                     Remove
                                 </button>
                                 <h4>({movie.Year})</h4>
                             </div>
                         </li>
-                )})}
+                    )
+                })}
             </ul>
         </div>
     );

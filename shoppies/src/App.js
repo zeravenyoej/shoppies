@@ -9,13 +9,13 @@ function App() {
     const [query, setQuery] = useState('');
     const [movieData, setMovieData] = useState();
 
+    // GET call is made to the API everytime the user types in the form. Results are stored in local state called movieData 
     useEffect(() => {
         axios.get(`https://www.omdbapi.com/?s=${query}&apikey=36575925`)
         .then(res => setMovieData(res.data.Search))
         .catch(err => console.log("Here is the error: ", err))
     },[query]);
     
-
     return (
         <div className="App">
             <div id="topContent">
@@ -23,8 +23,7 @@ function App() {
                 <h3>Choose up to five movies to nominate</h3>
                 <Search
                     setQuery={setQuery}
-                    setMovieData={setMovieData}
-                />
+                    setMovieData={setMovieData}/>
             </div>
             <div id="resultsAndNoms">
                 <Results

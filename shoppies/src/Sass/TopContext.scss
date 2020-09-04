@@ -1,0 +1,59 @@
+#topContent {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(246, 239, 208);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 3%;
+    box-shadow: 8px 10px 10px 0;
+
+    h1 {
+        font-size: 3.5rem;
+        margin: 1%;
+        letter-spacing: 3px;
+        text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    }
+    
+    h3 {
+        margin: 1%;
+    }
+    
+    
+    form {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        width: 40%;
+
+        @media (min-width: 0px) and (max-width: 415px) {
+            width: 100%;
+        }
+        
+        .magnifyIcon {
+            margin-left: 1.5%;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            transform: scaleX(-1);
+            opacity: 0.5;
+            color: gray;
+
+            @media (min-width: 0px) and (max-width: 415px) {
+                margin-left: 3%;
+            }
+        }
+
+        input {
+            padding: 1%;
+            padding-left: 7%;
+            width: 100%;
+            font-size: 1rem;
+
+            @media (min-width: 0px) and (max-width: 1024px) {
+                padding-left: 10%;
+            }
+        }
+    }
+}
