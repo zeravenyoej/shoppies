@@ -54,7 +54,7 @@ const Nominations = (props) => {
                             <div className="movieInfo"> 
                                 <button className="liveButton" onClick={(e) => {
                                     e.preventDefault()
-                                    removeMovie(movie)}}>
+                                    props.removeMovie(movie)}}>
                                     Remove
                                 </button>
                                 <h4>({movie.Year})</h4>
