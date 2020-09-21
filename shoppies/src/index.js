@@ -5,10 +5,9 @@ import App from './App';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { reducer } from './reducers/index';
-import thunk from 'redux-logger';
 import logger from 'redux-logger';
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
+const store = createStore(reducer, applyMiddleware(logger));
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
